@@ -11,9 +11,11 @@ https://pypi.org/project/dlib/
 
 face recognition library (docs stuff)
 https://face-recognition.readthedocs.io/en/latest/readme.html#python-code-examples
-
 https://face-recognition.readthedocs.io/en/latest/installation.html#stable-release
 
 
 read about dependency in python
 https://packaging.python.org/en/latest/tutorials/managing-dependencies/
+
+about flask (used for rest endpoint)
+https://flask.palletsprojects.com/en/2.0.x/quickstart/
