@@ -1,0 +1,19 @@
+
+
+learn python
+https://www.tutorialspoint.com/python/index.htm
+
+required to installed cmake first before dlib
+
+dlib (required to install)
+https://pypi.org/project/dlib/
+
+
+face recognition library (docs stuff)
+https://face-recognition.readthedocs.io/en/latest/readme.html#python-code-examples
+
+https://face-recognition.readthedocs.io/en/latest/installation.html#stable-release
+
+
+read about dependency in python
+https://packaging.python.org/en/latest/tutorials/managing-dependencies/
