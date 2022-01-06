@@ -19,3 +19,10 @@ https://packaging.python.org/en/latest/tutorials/managing-dependencies/
 
 about flask (used for rest endpoint)
 https://flask.palletsprojects.com/en/2.0.x/quickstart/
+
+
+python working with path
+https://www.codegrepper.com/code-examples/python/python+get+full+path
+
+flask CORS
+https://flask-cors.readthedocs.io/en/latest/

@@ -4,7 +4,10 @@ import sys
 import face_recognition
 import faceclass.TestOne
 from flask import Flask
+from flask_cors import CORS, cross_origin
 import json
+
+from pathlib import Path
 from PIL import Image
 import os
 import os.path
@@ -26,56 +29,70 @@ from flask import request
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
 app = Flask(__name__)
-
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!"
+CORS(app)
+# @app.route("/")
+# def hello_world():
+#     return "<p>Hello, World!"
+#
+#
 
 
 @app.route("/developer")
 def get_developer_name():
     return "Jay Bhavsar is Developer."
+#
+#
+# @app.route("/user/<int:userid>")
+# def show_user_profile(userid):
+#     if userid == 1:
+#         return "jay"
+#     else:
+#         return "paggu"
+#
+#
+# @app.route('/info', methods=['POST', 'GET'])
+# def fun():
+#     print("request hit.")
+#     return "post request successfull."
 
 
-@app.route("/user/<int:userid>")
-def show_user_profile(userid):
-    if userid == 1:
-        return "jay"
-    else:
-        return "paggu"
+# @app.route('/check', methods=['POST'])
+# def perform_check():
+#     # image = face_recognition.load_image_file("/home/laitmatus/Desktop/known_people/shahrukh.jpg")
+#     # face_locations = face_recognition.face_locations(image)
+#     # print('face_locations', face_locations)
+#
+#     print('request.method', request.method)
+#     print('request.form', request.form)
+#     print('request.args', request.args)
+#
+#     known_image = face_recognition.load_image_file("/home/laitmatus/Desktop/known_people/shahrukh.jpg")
+#     unknown_image = face_recognition.load_image_file("/home/laitmatus/Desktop/unknown_pictures")
+#
+#     known_encoding = face_recognition.face_encodings(known_image)[0]
+#     unknown_encoding = face_recognition.face_encodings(unknown_image)[0]
+#
+#     results = face_recognition.compare_faces([known_encoding], unknown_encoding)
+#
+#     print('result = ', results)
+#
+#     return "dfd"
 
 
-@app.route('/info', methods=['POST', 'GET'])
-def fun():
-    print("request hit.")
-    return "post request successfull."
-
-
-@app.route('/check')
-def perform_check():
-    # image = face_recognition.load_image_file("/home/laitmatus/Desktop/known_people/shahrukh.jpg")
-    # face_locations = face_recognition.face_locations(image)
-    # print('face_locations', face_locations)
-    known_image = face_recognition.load_image_file("/home/laitmatus/Desktop/known_people/shahrukh.jpg")
-    unknown_image = face_recognition.load_image_file("/home/laitmatus/Desktop/unknown_pictures")
-
-    known_encoding = face_recognition.face_encodings(known_image)[0]
-    unknown_encoding = face_recognition.face_encodings(unknown_image)[0]
-
-    results = face_recognition.compare_faces([known_encoding], unknown_encoding)
-
-    print('result = ', results)
-
-    return "dfd"
-
-
-@app.route('/getimages')
+@app.route('/getimages', methods=['POST'])
+@cross_origin()
 def get_image():
+    knownfolder = request.form['knowns'] + '/*.jpg'
+    image_to_find = request.form['findimg']
+
+    print('knownfolder', knownfolder)
+    print('image_to_find', image_to_find)
+
     response = {}
-    for img in glob.glob("/home/laitmatus/Desktop/known_people/*.jpg"):
+    for img in glob.glob(knownfolder):
         print('img data ', img)
         known_image = face_recognition.load_image_file(img)
-        unknown_image = face_recognition.load_image_file("/home/laitmatus/Desktop/unknown_pictures/jay_pancard.jpg")
+        unknown_image = face_recognition.load_image_file(image_to_find)
 
         known_encoding = face_recognition.face_encodings(known_image)[0]
         unknown_encoding = face_recognition.face_encodings(unknown_image)[0]
@@ -96,17 +113,3 @@ def get_image():
     response['status'] = False
     response['path'] = ""
     return json.dumps(response)
-
-
-
-# @app.route('/getimages')
-# def get_image():
-#     img_ls = []
-#     for img in glob.glob("/home/laitmatus/Desktop/known_people/*.jpg"):
-#         im = Image.open(img)
-#         img_ls.append(im)
-#
-#     print('images', img_ls)
-#     return "Done"
-
-
