@@ -1,4 +1,21 @@
 
+Required installations
+
+virtualenv:
+    sudo apt install python3-virtualenv
+
+dlib:
+    pip install dlib
+
+cmake:
+    sudo apt install cmake
+
+flask:
+
+flask cors:
+    pip install flask-cors
+
+
 
 learn python
 https://www.tutorialspoint.com/python/index.htm
@@ -26,3 +43,5 @@ https://www.codegrepper.com/code-examples/python/python+get+full+path
 
 flask CORS
 https://flask-cors.readthedocs.io/en/latest/
+
+
