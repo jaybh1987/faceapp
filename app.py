@@ -30,16 +30,16 @@ from flask import request
 
 app = Flask(__name__)
 CORS(app)
-# @app.route("/")
-# def hello_world():
-#     return "<p>Hello, World!"
-#
-#
+
+
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!"
 
 
 @app.route("/developer")
 def get_developer_name():
-    return "Jay Bhavsar is Developer."
+    return "<h3>Welcome to FaceApp.</h3>"
 #
 #
 # @app.route("/user/<int:userid>")
