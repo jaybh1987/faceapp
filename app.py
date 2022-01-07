@@ -34,7 +34,7 @@ CORS(app)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!"
+    return "<h3>Welcome To FaceApp</h3>"
 
 
 @app.route("/developer")
