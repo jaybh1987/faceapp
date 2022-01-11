@@ -42,6 +42,10 @@ def hello_world():
 @cross_origin()
 def get_developer_name():
     return "<h3>Welcome to FaceApp.</h3>"
+
+
+def create_app():
+    return app
 #
 #
 # @app.route("/user/<int:userid>")

@@ -16,6 +16,9 @@ flask cors:
     pip install flask-cors
 
 
+    sudo apt install python3-waitress
+
+
 
 learn python
 https://www.tutorialspoint.com/python/index.htm
