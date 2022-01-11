@@ -6,7 +6,7 @@ virtualenv:
 
 dlib:
     pip install dlib
-
+pip insta
 cmake:
     sudo apt install cmake
 
@@ -43,5 +43,9 @@ https://www.codegrepper.com/code-examples/python/python+get+full+path
 
 flask CORS
 https://flask-cors.readthedocs.io/en/latest/
+
+regarding server
+https://exerror.com/warning-this-is-a-development-server-do-not-use-it-in-a-production-deployment-use-a-production-wsgi-server-instead/
+https://pythonbasics.org/deploy-flask-app/
 
 

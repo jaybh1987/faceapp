@@ -32,6 +32,7 @@ app = Flask(__name__)
 CORS(app)
 
 
+
 @app.route("/")
 def hello_world():
     return "<h3>Welcome To FaceApp</h3>"
@@ -84,6 +85,8 @@ def get_developer_name():
 def get_image():
     knownfolder = request.form['knowns'] + '/*.jpg'
     image_to_find = request.form['findimg']
+
+    print('request = ', request)
 
     print('knownfolder', knownfolder)
     print('image_to_find', image_to_find)
