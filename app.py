@@ -32,13 +32,14 @@ app = Flask(__name__)
 CORS(app)
 
 
-
 @app.route("/")
+@cross_origin()
 def hello_world():
     return "<h3>Welcome To FaceApp</h3>"
 
 
 @app.route("/developer")
+@cross_origin()
 def get_developer_name():
     return "<h3>Welcome to FaceApp.</h3>"
 #
