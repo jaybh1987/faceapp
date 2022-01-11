@@ -18,6 +18,14 @@ flask cors:
 
     sudo apt install python3-waitress
 
+    reference:
+    https://stackoverflow.com/questions/51025893/flask-at-first-run-do-not-use-the-development-server-in-a-production-environmen
+
+    APPLICATION RUN COMMAN IS HERE.
+    waitress-serve --port=5000 --call app:create_app & disown 2&>1
+
+
+
 
 
 learn python
