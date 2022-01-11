@@ -24,6 +24,8 @@ flask cors:
     APPLICATION RUN COMMAN IS HERE.
     waitress-serve --port=5000 --call app:create_app & disown 2&>1
 
+    to find process by port.
+    lsof -i :5000
 
 
 

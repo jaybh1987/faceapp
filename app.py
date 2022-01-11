@@ -41,7 +41,7 @@ def hello_world():
 @app.route("/developer")
 @cross_origin()
 def get_developer_name():
-    return "<h3>Welcome to FaceApp.</h3>"
+    return "<h1>Laitmatus Software Pvt Ltd</h1>"
 
 
 def create_app():
@@ -91,14 +91,14 @@ def get_image():
     knownfolder = request.form['knowns'] + '/*.jpg'
     image_to_find = request.form['findimg']
 
-    print('request = ', request)
-
-    print('knownfolder', knownfolder)
-    print('image_to_find', image_to_find)
+    # print('request = ', request)
+    #
+    # print('knownfolder', knownfolder)
+    # print('image_to_find', image_to_find)
 
     response = {}
     for img in glob.glob(knownfolder):
-        print('img data ', img)
+        # print('img data ', img)
         known_image = face_recognition.load_image_file(img)
         unknown_image = face_recognition.load_image_file(image_to_find)
 
@@ -108,9 +108,9 @@ def get_image():
         results = []
         results = face_recognition.compare_faces([known_encoding], unknown_encoding)
 
-        print('result = ', results)
-        print(results[0] is True)
-        print(type(results[0]))
+        # print('result = ', results)
+        # print(results[0] is True)
+        # print(type(results[0]))
 
         if results[0]:
             response['status'] = True
