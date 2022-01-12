@@ -106,7 +106,7 @@ def get_image():
         unknown_encoding = face_recognition.face_encodings(unknown_image)[0]
 
         results = []
-        results = face_recognition.compare_faces([known_encoding], unknown_encoding)
+        results = face_recognition.compare_faces([known_encoding], unknown_encoding, 0.5)
 
         # print('result = ', results)
         # print(results[0] is True)
