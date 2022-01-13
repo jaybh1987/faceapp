@@ -1,22 +1,27 @@
 
 Required installations
-
-virtualenv:
-    sudo apt install python3-virtualenv
-
-dlib:
-    pip install dlib
-pip insta
 cmake:
     sudo apt install cmake
+dlib:
+    pip install dlib
+
+face-recognization:
+    pip3 install face_recognition
 
 flask:
+    pip install Flask
 
 flask cors:
     pip install flask-cors
 
+waitress:
+sudo apt install python3-waitress
 
-    sudo apt install python3-waitress
+virtualenv:
+sudo apt install python3-virtualenv
+
+
+
 
     reference:
     https://stackoverflow.com/questions/51025893/flask-at-first-run-do-not-use-the-development-server-in-a-production-environmen
@@ -26,8 +31,6 @@ flask cors:
 
     to find process by port.
     lsof -i :5000
-
-
 
 
 learn python
